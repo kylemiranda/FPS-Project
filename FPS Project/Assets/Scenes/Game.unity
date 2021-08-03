@@ -402,6 +402,8 @@ GameObject:
   m_Component:
   - component: {fileID: 817659436}
   - component: {fileID: 817659435}
+  - component: {fileID: 817659439}
+  - component: {fileID: 817659438}
   - component: {fileID: 817659437}
   m_Layer: 0
   m_Name: Player
@@ -454,65 +456,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 817659434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2be9d6b966a74ccb9a777a40f1b02e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 83a5295cfc67c41e79bd75578a0841be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WASD:
-    m_Name: WASD
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e9074971-e325-4237-bb0c-aa9168c1f505
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: fc127f85-488b-41cd-ac15-8aa8a7f34274
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: WASD
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 800f202d-3647-46e3-8f1d-a6d68494d068
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: WASD
-      m_Flags: 8
-    - m_Name: down
-      m_Id: 9c13fda4-a9a4-48ca-bf4f-3596d8376186
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: WASD
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 8246aece-d160-49a6-bfd9-f7d810037098
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: WASD
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 0b71893a-ef3a-4f5d-8f41-e6602b107e18
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: WASD
-      m_Flags: 8
-  Controller: {fileID: 817659435}
+  controller: {fileID: 817659435}
+  speed: 11
+  jumpHeight: 3.5
   gravity: -30
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  isGrounded: 0
-  groundCheck: {fileID: 1225099291}
-  groundDistance: 0.4
+--- !u!114 &817659438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817659434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a722f70d14b4a6bb4d28529f72d59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivityX: 8
+  sensitivityY: 0.5
+  playerCamera: {fileID: 963194228}
+  xClamp: 85
+--- !u!114 &817659439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817659434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a27ab74a09d458b8b8f2fde5e36dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 817659437}
+  mouseLook: {fileID: 817659438}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
