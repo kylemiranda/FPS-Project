@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
@@ -13,12 +14,13 @@ public class Movement : MonoBehaviour {
 
     [SerializeField] float gravity = -30f; // -9.81
     Vector3 verticalVelocity = Vector3.zero;
+    [SerializeField] private Transform groundCheck;
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
 
     private void Update ()
     {
-        isGrounded = Physics.CheckSphere(transform.position, 0.1f, groundMask);
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, groundMask);
         if (isGrounded) {
             verticalVelocity.y = 0;
         }
