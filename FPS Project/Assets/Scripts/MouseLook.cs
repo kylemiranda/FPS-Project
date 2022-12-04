@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour {
 
+    [SerializeField] Transform playerCamera;
+    [SerializeField] float xClamp = 85f;
+    
     public float sensitivityX = 8f;
     public float sensitivityY = 0.5f;
     float mouseX, mouseY;
-
-    [SerializeField] Transform playerCamera;
-    [SerializeField] float xClamp = 85f;
     float xRotation = 0f;
 
     private void Start ()

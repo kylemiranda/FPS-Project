@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class InputManager : MonoBehaviour {
     
@@ -21,7 +22,7 @@ public class InputManager : MonoBehaviour {
         // groundMovement.[action].performed += context => do something
         groundMovement.HorizontalMovement.performed += ctx => horizontalInput = ctx.ReadValue<Vector2>();
 
-        groundMovement.Jump.performed += _ => movement.OnJumpPressed();
+        groundMovement.Jump.performed += ctx => movement.OnJumpPressed();
 
         groundMovement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();
         groundMovement.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
@@ -32,7 +33,6 @@ public class InputManager : MonoBehaviour {
         movement.ReceiveInput(horizontalInput);
         mouseLook.ReceiveInput(mouseInput);
     }
-    
 
     private void OnEnable ()
     {

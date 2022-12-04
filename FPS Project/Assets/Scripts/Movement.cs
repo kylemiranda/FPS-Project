@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-    public CharacterController controller;
-    public float speed = 11f;
-    Vector2 horizontalInput;
-
     [SerializeField] float jumpHeight = 3.5f;
-    bool jump;
-
-    [SerializeField] float gravity = -30f; // -9.81
-    Vector3 verticalVelocity = Vector3.zero;
+    [SerializeField] float gravity = -30f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] LayerMask groundMask;
+    [SerializeField] private float speed = 11f;
+    [SerializeField] CharacterController controller;
+    
+    bool jump;
     bool isGrounded;
+    Vector3 verticalVelocity = Vector3.zero;
+    Vector2 horizontalInput;
 
+    
     private void Update ()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, groundMask);
+        isGrounded = Physics.Raycast(controller.transform.position, Vector2.down, 1.1f, groundMask);
         if (isGrounded) {
             verticalVelocity.y = 0;
         }

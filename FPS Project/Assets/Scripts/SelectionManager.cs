@@ -12,10 +12,8 @@ public class SelectionManager : MonoBehaviour
 
     private Transform _selection;
 
-    // Update is called once per frame
     void Update()
     {
-
         if (_selection != null)
         {
             var selectionRenderer = _selection.GetComponent<Renderer>();
